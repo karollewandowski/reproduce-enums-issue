@@ -10,6 +10,9 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.karollewandowski.reproduceenumsissue.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <postStartupActivity
+                implementation="com.github.karollewandowski.reproduceenumsissue.enums.FrameworkInitializer"/>
+
     </extensions>
 
     <applicationListeners>

@@ -9,6 +9,7 @@ import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
 import com.github.karollewandowski.reproduceenumsissue.MyBundle
+import com.github.karollewandowski.reproduceenumsissue.enums.FrameworkSettings
 import com.github.karollewandowski.reproduceenumsissue.services.MyProjectService
 import javax.swing.JButton
 
@@ -20,6 +21,7 @@ class MyToolWindowFactory : ToolWindowFactory {
     }
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
+        println(project.getService(FrameworkSettings::class.java).frameworkVersion.subFramework)
         val myToolWindow = MyToolWindow(toolWindow)
         val content = ContentFactory.getInstance().createContent(myToolWindow.getContent(), null, false)
         toolWindow.contentManager.addContent(content)
